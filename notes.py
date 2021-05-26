@@ -75,10 +75,23 @@ print(__name__)
 
 
 # _______________________________________________
+# enumerate: 枚举
+for epoch in range(3):
+    for step, (batch_x, batch_y) in enumerate(dataloader):  # 每一步 loader 释放一小批(batch_size)数据用来学习
+# step 对应第几批，
+# (batch_x, batch_y)对应输入和target
 
 
+# _______________________________________________
+# python的print()字符串前面加f表示格式化字符串，
+# 加f后可以在字符串里面使用用花括号括起来的变量和表达式，
+# 如果字符串里面没有表达式，那么前面加不加f输出应该一样.
+t = 1
+print(f"Epoch {t + 1}\n-------------------------------")
 
-
+# out
+# Epoch 2
+# -------------------------------
 
 
 
