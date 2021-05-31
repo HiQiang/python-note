@@ -95,3 +95,16 @@ print(f"Epoch {t + 1}\n-------------------------------")
 
 
 
+# _______________________________________________
+# RGB图像转换为Gray图像
+from PIl import Image
+lenna = Image.open('lenna.png')  # 读取彩色图像
+im = lenna.convert('L')          # 转变模式选择'L'
+
+im_array = np.array(lenna)       # 图片格式变为ndarray变量
+lenna = Image.fromarray(im_array)# ndarray变量变为图片格式，可用于PIL的进一步处理，比如灰度变换
+
+
+
+
+
