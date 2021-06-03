@@ -33,6 +33,8 @@ class Animal:  # 定义一个父类
 class Dog(Animal):  # 定义一个继承Animal的子类
     def __init__(self):  # 子类的初始化函数，此时会覆盖父类Animal类的初始化函数
         super(Dog, self).__init__()  # 在子类进行初始化时，也想继承父类的__init__()就通过super()实现,此时会对self.name= 'animal'
+        
+
         self.name = 'dog'  # 定义子类的name属性,并且会把刚才的self.name= 'animal'更新为'dog'
         print('I am son')
         
@@ -103,6 +105,41 @@ im = lenna.convert('L')          # 转变模式选择'L'
 
 im_array = np.array(lenna)       # 图片格式变为ndarray变量
 lenna = Image.fromarray(im_array)# ndarray变量变为图片格式，可用于PIL的进一步处理，比如灰度变换
+
+
+# _______________________________________________
+# pandas.DataFrame
+# https://github.com/MorvanZhou/tutorials/tree/master/numpy%26pandas
+import pandas as pd
+
+s = pd.Series([1,3,6,np.nan,4,1]) # similar with 1D numpy
+print(s)
+# out
+# 0    1.0
+# 1    3.0
+# 2    6.0
+# 3    NaN
+# 4    4.0
+# 5    1.0
+# dtype: float64
+dates = pd.date_range('20160101', periods=6)
+df = pd.DataFrame(np.random.randn(6,4), index=dates, columns=['A','B','C','D'])
+print(df['B'])
+df2 = pd.DataFrame({'A' : 1.,
+                       'B' : pd.Timestamp('20130102'),
+                        'C' : pd.Series(1,index=list(range(4)),dtype='float32'),
+                        'D' : np.array([3] * 4,dtype='int32'),
+                        'E' : pd.Categorical(["test","train","test","train"]),
+                        'F' : 'foo'})
+print(df2)
+print(df2.dtypes)
+print(df.index)
+print(df.columns)
+print(df.values)
+print(df.describe())
+print(df.T)
+print(df.sort_index(axis=1, ascending=False))
+print(df.sort_values(by='B'))
 
 
 
