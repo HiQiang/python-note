@@ -142,6 +142,10 @@ print(df.sort_index(axis=1, ascending=False))
 print(df.sort_values(by='B'))
 
 
+# _______________________________________________
+plt.legend() # 显示曲线label
 
-
+list(range(1,20))
+Out[33]: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+plt.xticks(range(1,20)) # x坐标设置为整数
 
