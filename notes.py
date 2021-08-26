@@ -149,3 +149,15 @@ list(range(1,20))
 Out[33]: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 plt.xticks(range(1,20)) # x坐标设置为整数
 
+
+#________________________________________________
+numpy numerical python
+
+data = np.load("filename") # 加载文件
+cmap # colour map
+
+#————————————————————————————————————————————————
+img_path = '../images'
+files = os.listdir(img_path)
+numbers_of_images = len(files)
+image_data = np.zeros([numbers_of_images, 800, 800])
