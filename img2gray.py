@@ -33,7 +33,7 @@ label_Path = '../label/label.csv'
 
 class MyDataset(Dataset):
     def __init__(self, img_data, label_path):
-        label_df = pd.read_csv(label_path, header=None, sep='\t')
+        label_df = pd.read_csv(label_path, header=None, sep='\t')  # 表示没有表头
         self.label = label_df[0]
         self.data = img_data
         self.length = label_df.shape[0]
