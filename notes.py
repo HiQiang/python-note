@@ -161,3 +161,21 @@ img_path = '../images'
 files = os.listdir(img_path)
 numbers_of_images = len(files)
 image_data = np.zeros([numbers_of_images, 800, 800])
+
+
+
+image = cv2.imread(img_path, )  # 输入图像是 HWC
+image = image.transpose(2, 0, 1)  # 转换为  CHW
+
+
+#————————————————————————————————————————————————
+from torchvision import models              # 导入内置模型
+model = torchvision.models.resnet50()      
+print(model)
+
+
+#———————————————————————————————————————————————
+import torch.nn as nn           # 微调内置模型
+model = models.resnet50(pretrained=False)
+model.conv1 = nn.Conv2d(1, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+model.fc = nn.Linear(2048, 3)
