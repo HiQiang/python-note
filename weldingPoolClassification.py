@@ -131,7 +131,6 @@ def test(dataloader, model, loss_fn):
 
 epochs = 200
 
-
 training_Loss = np.zeros(epochs)
 test_Loss = np.zeros(epochs)
 Acc_Training = np.zeros(epochs)
