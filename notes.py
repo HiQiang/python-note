@@ -179,3 +179,8 @@ import torch.nn as nn           # 微调内置模型
 model = models.resnet50(pretrained=False)
 model.conv1 = nn.Conv2d(1, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
 model.fc = nn.Linear(2048, 3)
+
+
+#———————————————————————————————————————————————
+import pandas as pd
+a = pd.read_csv(tr_path)
