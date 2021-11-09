@@ -64,7 +64,7 @@ class Affine:
         dx = np.dot(self.W.T, dout)
         self.dW = np.dot(dout, self.x.T)
         self.db = np.sum(dout, axis=1)
-        self.db = self.db.reshape([-1, 1])
+        self.db = self.db.reshape([-1, 1])  # 最后一层 SoftmaxWithLoss 进行了 /batch_size操作
 
         return dx
 
